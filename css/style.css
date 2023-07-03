@@ -1,0 +1,16 @@
+.neuPost{
+    background-color: lightgray;
+}
+.posPost{
+    background-color: lightgreen;
+}
+.negPost{
+    background-color: lightcoral;
+}
+div[aria-expanded=true] .fa-chevron-right {
+    display: none;
+}
+div[aria-expanded=false] .fa-chevron-down {
+    display: none;
+}
+
