@@ -41,6 +41,21 @@ class select_course extends moodleform {
         // A common convention is to store it in a variable, such as `$mform`.
         $mform = $this->_form; // Don't forget the underscore!
 
+        // Add elements to your form.
+        $mform->addElement('html',
+        '<a href="https://lab.eurecatacademy.org" target="_blank" style="margin-bottom: 20px; margin-top: 20px; width: 100%;">');
+            $mform->addElement('html',
+            '<div class="btn d-flex align-items-center justify-content-center"
+            style="height: 90px; margin-bottom: 20px; margin-top: 20px; width: 100%;
+            background-image: linear-gradient(to bottom left, #465f9b, #755794, #6d76ae);">');
+                $mform->addElement('html',
+                '<img alt="'.get_string('premiumicon', 'local_sentiment_checker').'" src="pix/premiumicon.png" height="30"/>');
+                $mform->addElement('html',
+                '<label style="margin-top: 5px; margin-left: 5px;" class="text-white">'.
+                get_string('getpremium', 'local_sentiment_checker').'</label>');
+            $mform->addElement('html', '</div>');
+        $mform->addElement('html', '</a>');
+
         $courses = get_courses_array();
         $courses[0] = get_string('All_courses', 'local_sentiment_checker');
         ksort($courses);
@@ -55,17 +70,20 @@ class select_course extends moodleform {
         $mform->addElement('advcheckbox', 'only_bad',
         get_string('show_bad', 'local_sentiment_checker'),
         null,
+        array('disabled' => 'disabled')
         );
 
         $mform->addElement('advcheckbox', 'show_en',
         get_string('show_en', 'local_sentiment_checker'),
         null,
+        array('disabled' => 'disabled')
         );
         $mform->addHelpButton('show_en', 'show_en', 'local_sentiment_checker');
 
         $mform->addElement('float',
             'thresholdNeg',
             get_string('change_neg_threshold', 'local_sentiment_checker'),
+            ['disabled' => 'disabled']
         );
         $mform->addHelpButton('thresholdNeg', 'threshold', 'local_sentiment_checker');
         $mform->getElement('thresholdNeg')->setValue(-0.3);
@@ -73,6 +91,7 @@ class select_course extends moodleform {
         $mform->addElement('float',
             'thresholdPos',
             get_string('change_pos_threshold', 'local_sentiment_checker'),
+            ['disabled' => 'disabled']
         );
         $mform->addHelpButton('thresholdPos', 'threshold', 'local_sentiment_checker');
         $mform->getElement('thresholdPos')->setValue(0.3);

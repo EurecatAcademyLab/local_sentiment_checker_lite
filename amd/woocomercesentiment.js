@@ -50,7 +50,7 @@ function setStatusSentiment(active, url) {
  * To get the product title
  */
 function getProductTitleSentiment() {
-    let name = 'Sentiment Checker Pro';
+    let name = 'Sentiment Checker Lite';
     return name;
 }
 /**
@@ -64,7 +64,7 @@ function getFreeKeySentiment() {
  * To get the product
  */
 function getProductIdSentiment() {
-    let name = 197;
+    let name = 200;
     return name;
 }
 /**
@@ -186,13 +186,13 @@ async function woocommerce_api_status_sentiment(yui, apikey, productid, email, p
         email = email.toString().replace(/\s+/g, '');
         if (email.length == 0 || email == '') {
             validateEmailSentiment();
-        } else if (apikey == getFreeKeySentiment() || apikey == 0 || apikey == '' || apikey.length == 0){
+        } else if (apikey != getFreeKeySentiment() || apikey == 0 || apikey == '' || apikey.length == 0){
             validateApikeySentiment();
         } else if ( productid != getProductIdSentiment()){
             validateProductSentiment();
         } else if ( privacy == 0){
             validatePrivacySentiment();
-        } else if (apikey != getFreeKeySentiment() && productid == getProductIdSentiment() && plugin == 'sentiment_checker'){
+        } else if (apikey == getFreeKeySentiment() && productid == getProductIdSentiment() && plugin == 'sentiment_checker'){
             validateApikeySentimentCorrect();
             validateProductSentimentCorrect();
 
@@ -247,7 +247,7 @@ async function woocommerce_api_status_sentiment(yui, apikey, productid, email, p
                         product_id_Sentiment = parseInt(product_id_Sentiment)
                         // handle data
 
-                        if (data.status_check == 'active' && product_title_Sentiment == 'Sentiment Checker Pro' && product_id_Sentiment == 197) {
+                        if (data.status_check == 'active' && product_title_Sentiment == 'Sentiment Checker Lite' && product_id_Sentiment == 200) {
                             active = 1;
                             setStatusSentiment(active, urlSettingsSentiment);
                             if (currentURLSentiment.endsWith("section=managelocalsentiment_checker") || currentURLSentiment.endsWith("local/sentiment_checker/index.php")) {

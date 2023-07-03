@@ -26,7 +26,7 @@
 defined('MOODLE_INTERNAL') || die();
 
 $string['pluginname'] = 'Sentiment checker';
-$string['pluginnameextra'] = '(Pro / Beta)';
+$string['pluginnameextra'] = '(Beta)';
 
 $string['Analysis'] = 'Analysis';
 $string['Graphs'] = 'Graphs';
@@ -188,6 +188,7 @@ $string['eurecatorg'] = "Eurecat.org";
 
 // Premium.
 $string['premium'] = '* Upgrade to Sentiment Checker - Premium';
+$string['getpremium'] = '* Get Premium';
 $string['premiumpage'] = 'Eurecat.Lab';
 $string['keepquarentine'] = '* Add the posibility to change negative the threshold';
 $string['removequarentine'] = '* Add the posibility to change positive the threshold';

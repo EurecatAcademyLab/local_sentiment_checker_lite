@@ -126,5 +126,5 @@ class si_about_form extends moodleform {
  * @return String
  */
 function get_api_sentiment() {
-    return '1d7ff265efb59b5b12ad2b6716155c2f378afafa';
+    return '82a56cb1632bf35d874d8e3b9c7c219df0f0ff83';
 }
